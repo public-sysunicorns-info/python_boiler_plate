@@ -1,4 +1,4 @@
-FROM python:3.9 AS builder
+FROM python:3.10 AS builder
 
 # extra dependencies (over what buildpack-deps already includes)
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -18,7 +18,7 @@ ENV PATH="/home/python/.local/bin:${PATH}"
 COPY --chown=python:python requirements.txt /home/python/wheels/requirements.txt
 RUN pip wheel -r /home/python/wheels/requirements.txt -f /home/python/wheels
 
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 RUN python -m pip install --upgrade pip
 
@@ -52,5 +52,5 @@ USER root
 RUN rm -rf /home/python/wheels && rm -rf /home/python/.cache/pip/*
 
 USER python
-COPY --chown=python:python ./src .
-CMD ["python", "./src/main.py"]
+COPY --chown=python:python . .
+CMD ["python", "./main.py"]
