@@ -14,7 +14,7 @@ class Application:
     container: Container
 
 
-    TITLE = "Python Boiler Plateo"
+    TITLE = "Python Boilerplate"
     DESCRIPTION = "Python Boiler Plate from https://github.com/public-sysunicorns-info/python_boiler_plate"
 
 
@@ -52,4 +52,4 @@ class Application:
     async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
         if self.fastapi_object.root_path:
             scope["root_path"] = self.fastapi_object.root_path
-        await self.fastapi.__call__(scope, receive, send)
+        await self.fastapi_object.__call__(scope, receive, send)
