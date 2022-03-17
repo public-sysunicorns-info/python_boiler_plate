@@ -14,8 +14,7 @@ class Application:
     container: Container
 
 
-    TITLE = "Python Boilerplate"
-    DESCRIPTION = "Python Boiler Plate from https://github.com/public-sysunicorns-info/python_boiler_plate"
+    
 
 
     def __init__(self) -> None:
@@ -28,9 +27,9 @@ class Application:
 
         # Initialize FastAPI Object
         self.fastapi_object = fastapi.FastAPI(
-            title=self.TITLE,
-            description=self.DESCRIPTION,
-            version=version
+            title=self.container.application_config().name,
+            description=self.container.application_config().description,
+            version=self.container.application_config().version
         )
 
         # Include API Router from child package
