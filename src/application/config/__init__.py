@@ -15,6 +15,8 @@ class ApplicationConfig(pydantic.BaseSettings):
     uvicorn_port: int = pydantic.Field(default=8080)
     uvicorn_workers: int = pydantic.Field(default=1, const=1)
 
+    class Config:
+        env_prefix = "APPLICATION_"
 
 
 def application_config_factory () -> ApplicationConfig:
