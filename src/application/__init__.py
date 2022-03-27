@@ -1,19 +1,25 @@
+"""
+Module packaging the application
+"""
 
 import fastapi
 from starlette.types import Receive, Scope, Send
 from dependency_injector import wiring
+import application.api
 
 from .config import ApplicationConfig
 from .container import Container
-import application.api
 
 
 class Application:
+    """
+    Application Class wrapping fastapi object and providing initializer
+    """
 
     fastapi_object: fastapi.FastAPI = None
     container: Container
     application_config: ApplicationConfig = wiring.Provide[Container.application_config]
-    
+
     def _init_container(self):
         """
             Initialize and wire dependency-injection
