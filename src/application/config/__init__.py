@@ -4,7 +4,7 @@ Module providing generic configuration
 
 from pydoc import describe
 import pydantic
-from application.version import version
+from application.version import VERSION
 
 DEFAULT_APPLICATION_NAME = "Python Boilerplate"
 DEFAULT_APPLICATION_DESCRIPTION = """
@@ -19,7 +19,7 @@ class ApplicationConfig(pydantic.BaseSettings):
     # Application Configuration
     name: str = pydantic.Field(default=DEFAULT_APPLICATION_NAME)
     description: str = pydantic.Field(default=DEFAULT_APPLICATION_DESCRIPTION)
-    version: str = pydantic.Field(default=version, const=version)
+    version: str = pydantic.Field(default=VERSION, const=VERSION)
     # Uvicorn Configuration
     uvicorn_host: str = pydantic.Field(default="0.0.0.0")
     uvicorn_port: int = pydantic.Field(default=8080)
