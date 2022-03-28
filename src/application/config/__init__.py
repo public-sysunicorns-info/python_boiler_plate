@@ -7,8 +7,8 @@ import pydantic
 from application.version import VERSION
 
 DEFAULT_APPLICATION_NAME = "Python Boilerplate"
-DEFAULT_APPLICATION_DESCRIPTION = """
-Python Boiler Plate from https://github.com/public-sysunicorns-info/python_boiler_plate
+DEFAULT_APPLICATION_DESCRIPTION = """\
+Python Boiler Plate from https://github.com/public-sysunicorns-info/python_boiler_plate\
 """
 
 
@@ -24,6 +24,10 @@ class ApplicationConfig(pydantic.BaseSettings):
     uvicorn_host: str = pydantic.Field(default="0.0.0.0")
     uvicorn_port: int = pydantic.Field(default=8080)
     uvicorn_workers: int = pydantic.Field(default=1, const=1)
+    # Kubernetes Information
+    kube_namespace: str = pydantic.Field(default=None)
+    kube_pod_name: str = pydantic.Field(default=None)
+    kube_pod_ip: str = pydantic.Field(default=None)
 
     class Config:
         """
