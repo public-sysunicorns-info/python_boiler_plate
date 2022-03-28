@@ -27,7 +27,9 @@ class Application:
         """
         self.container = Container()
         self.container.wire(modules=[
-            __name__,
+            __name__
+        ],packages=
+        [
             application.api
         ])
 
