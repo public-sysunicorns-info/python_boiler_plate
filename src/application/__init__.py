@@ -76,6 +76,4 @@ class Application:
         """
             ASGI handler Proxy for FastAPI Handler
         """
-        if self.fastapi_object.root_path:
-            scope["root_path"] = self.fastapi_object.root_path
         await self.fastapi_object.__call__(scope, receive, send)
