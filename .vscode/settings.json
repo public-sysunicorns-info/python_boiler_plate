@@ -15,16 +15,24 @@
     "python.terminal.activateEnvironment": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
     "terminal.integrated.env.linux": {
-        "PYTHONPATH": "${workspaceFolder}/src/:${env:PYTHONPATH}",
-        "PATH": "${workspaceFolder}/src/:${env:PATH}"
+        "PYTHONPATH": "${workspaceFolder}/src/:${workspaceFolder}/test/:${env:PYTHONPATH}",
+        "PATH": "${workspaceFolder}/src/:${workspaceFolder}/test/:${env:PATH}"
     },
     "terminal.integrated.env.osx": {
-        "PYTHONPATH": "${workspaceFolder}/src/:${env:PYTHONPATH}",
-        "PATH": "${workspaceFolder}/src/:${env:PATH}"
+        "PYTHONPATH": "${workspaceFolder}/src/:${workspaceFolder}/test/:${env:PYTHONPATH}",
+        "PATH": "${workspaceFolder}/src/:${workspaceFolder}/test/:${env:PATH}"
     },
+    "python.envFile": "${workspaceFolder}/project.env",
     "python.analysis.autoSearchPaths": true,
     "python.analysis.extraPaths": [
-        "./src/"
+        "./src/",
+        "./test/"
     ],
     "python.linting.enabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "test"
+    ],
+    "todo-tree.general.tags": ["TODO","FIXME","BUG", "TODO-TEST"]
 }
