@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "python_boiler_plate"
 version = "0.1.0"
-description = ""
+description = "Python Boiler Plate from https://github.com/public-sysunicorns-info/python_boiler_plate"
 authors = ["miragecentury <victorien.vanroye@gmail.com>"]
 license = "MIT"
 
