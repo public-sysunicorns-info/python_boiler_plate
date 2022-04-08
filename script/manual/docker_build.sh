@@ -2,4 +2,4 @@
 
 docker build \
     -t python_boilerplate:manual \
-    ./src
+    .

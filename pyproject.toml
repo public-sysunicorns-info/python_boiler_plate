@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "python_boiler_plate"
+version = "0.1.0"
+description = ""
+authors = ["miragecentury <victorien.vanroye@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+dependency-injector = "^4.39.1"
+fastapi = "^0.75.1"
+uvicorn = "^0.17.6"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^1.6.0"
+requests = "^2.27.1"
+pytest = "^7.1.1"
+pytest-cov = "^3.0.0"
+pytest-xdist = "^2.5.0"
+virtualenv = "^20.14.0"
+pylint = "^2.13.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
