@@ -43,5 +43,9 @@
         "TODO-TEST"
     ],
     "editor.formatOnSaveMode": "file",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "vscode-coverage-highlighter.files": [
+        "dist/report_coverage.xml"
+    ],
+    "vscode-coverage-highlighter.defaultState": "enable"
 }
